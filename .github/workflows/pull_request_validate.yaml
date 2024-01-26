@@ -13,3 +13,8 @@ jobs:
         uses: deepakputhraya/action-pr-title@master
         with:
           regex: '(MAJOR|MINOR|PATCH): .+'
+      - name: Check PR title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "$PR_TITLE"
